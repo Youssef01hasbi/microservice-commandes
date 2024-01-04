@@ -1,0 +1,24 @@
+
+spring:
+  cloud:
+    config:
+      uri: https://github.com/Youssef01hasbi/microservice-commandes.git
+      server:
+        git:
+          uri: https://github.com/Youssef01hasbi/microservice-commandes.git
+
+mes-config-ms:
+  commandes-last: 10
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  health:
+    custom:
+      commandes-check:
+        status:
+          order: 1
+          expression: 'db == "UP"'
+
+
